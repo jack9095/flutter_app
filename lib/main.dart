@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'route/index.dart';
 
 void main() => runApp(RouteWidget());
 
@@ -9,7 +10,7 @@ class RouteWidget extends StatelessWidget {
       title: '路由的简单使用',
       theme: ThemeData(primaryColor: Colors.amber),
       routes: {
-        'lv_widgets': (context) => BasicWidgetsDemo(),
+        'lv_widgets': (context) => ListViewDemo(),
       },
       home: Scaffold(
         appBar: AppBar(

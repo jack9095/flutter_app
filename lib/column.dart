@@ -41,7 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          // https://blog.csdn.net/yuzhiqiang_1993/article/details/86496145
+          // MainAxisAlignment（主轴）就是与当前控件方向一致的轴
           mainAxisAlignment: MainAxisAlignment.center,
+          // CrossAxisAlignment（交叉轴）就是与当前控件方向垂直的轴
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             RaisedButton(
               child: Text("点击跳转下一页"),

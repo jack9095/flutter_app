@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'basic_widgets/index.dart';
-import 'list_view/index.dart';
-import 'grid_view/index.dart';
-import 'custom_icon/index.dart';
-import 'sliver_widgets/index.dart';
+import '../basic_widgets/index.dart';
+import '../list_view/index.dart';
+import '../grid_view/index.dart';
+import '../custom_icon/index.dart';
+import '../sliver_widgets/index.dart';
 
 void main() => runApp(MyApp());
 

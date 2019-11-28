@@ -29,14 +29,18 @@ class _IndexWidgetState extends State<IndexWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width =size.width;  // 屏幕宽度
+    final height =size.height;  // 屏幕高度
     return Scaffold(
 //      appBar: AppBar(
 //        centerTitle: true,
 //        title: Text('电商项目'),
 //      ),
-      backgroundColor: Color.fromRGBO(244, 255, 255, 1.0),
+      backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
       // 设置这个组件就会把里面的组件置于最底部
       bottomNavigationBar: BottomNavigationBar(
+//        backgroundColor: Color.fromRGBO(244, 255, 255, 1.0),
         type: BottomNavigationBarType.fixed,
         items: BOTTOMTABS,
         currentIndex: currentIndex,

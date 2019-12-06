@@ -9,40 +9,40 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     final width = size.width; // 屏幕宽度
-    double height = size.height; // 屏幕高度
-    double topPadding = MediaQuery.of(context).padding.top;
+    final height = size.height; // 屏幕高度
     return Column(
       children: <Widget>[
-        Container(
-          height: topPadding,
-        ),
-//        Divider(height: topPadding,),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-              ),
-//              onPressed: () => Navigator.pop(context),
-            ),
-            Text(
-              '分类',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
+            Expanded(
+              flex: 7,
+              child: Container(
+                child: Text(
+                  '分类',
+                ),
+                margin: EdgeInsets.fromLTRB(width / 2 - 7, 34.0, 0, 0),
               ),
             ),
-            IconButton(
-              icon: Icon(
-                Icons.share,
-                color: Colors.black,
+            Expanded(
+              flex: 1,
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0, 30.0, 15.0, 0),
+                child: Icon(CupertinoIcons.search),
               ),
-              onPressed: () {},
+            ),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0, 12.0, 0, 0),
+                height: 0.5,
+                color: Color.fromARGB(255, 234, 233, 234),
+              ),
             ),
           ],
         ),
@@ -58,14 +58,13 @@ class _CategoryPageState extends State<CategoryPage> {
 //            ),
             child: GridView.builder(
               shrinkWrap: true,  // 这个必须得设置， 否则不显示
-//              physics: NeverScrollableScrollPhysics(), // 禁止滑动
-              itemCount: 12,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   childAspectRatio: 1.7
               ),
+              itemCount: 12,
               itemBuilder: (context,index){
                 return FlatButton(
                   color: Color.fromARGB(255, 255, 255, 255),

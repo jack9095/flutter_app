@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//https://www.jianshu.com/p/96e1ae828b13
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -23,8 +24,7 @@ class _State extends State<AnimationWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    mAnimatedContainer = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+    mAnimatedContainer = AnimationController(duration: const Duration(milliseconds: 2000), vsync: this);
     curve = CurvedAnimation(parent: mAnimatedContainer, curve: Curves.easeIn);
   }
 
@@ -50,6 +50,7 @@ class _State extends State<AnimationWidget> with TickerProviderStateMixin {
         child: Icon(Icons.brush),
         onPressed: () {
           mAnimatedContainer.forward();
+//          ScaleTransition(scale: animation, child: FlutterLogo(size: 100.0));
         },
       ),
     );

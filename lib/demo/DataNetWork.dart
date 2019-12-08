@@ -46,15 +46,33 @@ class _State extends State<DataListView> with AutomaticKeepAliveClientMixin {
   }
 
   void requestData() async {
-    Dio dio = new Dio();
-    Response response = await dio.get(url);
-    print(response.toString());
-    Map jsonDecode = Convert.jsonDecode(response.toString());
-    // setState(){}的调用时吧视图重新绘制了一遍，但是并不是把整个视图 diss 掉再从新绘制。
-    // 而是调用了 build 方法，绘制只是绘制不一样的地方
-    setState(() {
-      subjects = jsonDecode['subjects'];
+//    Dio dio = new Dio();
+//    Response response = await dio.get(url);
+//    print(response.toString());
+//    Map jsonDecode = Convert.jsonDecode(response.toString());
+//    setState(() {
+//      subjects = jsonDecode['subjects'];
+//    });
+
+    requestHttp().then((val){
+      // setState(){}的调用时吧视图重新绘制了一遍，但是并不是把整个视图 diss 掉再从新绘制。
+      // 而是调用了 build 方法，绘制只是绘制不一样的地方
+      Map jsonDecode = Convert.jsonDecode(val.toString());
+      setState(() {
+        subjects = jsonDecode['subjects'];
+      });
     });
+  }
+
+  Future requestHttp() async{
+    try{
+      Dio dio = new Dio();
+      Response response = await dio.get(url);
+      print(response.toString());
+      return response;
+    }catch(e){
+      return print(e);
+    }
   }
 
   @override

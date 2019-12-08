@@ -59,7 +59,8 @@ void getRequest() async {
 // post 请求
 void postRequest() async {
   Dio dio = new Dio();
-  Response response = await dio.post('/test', data: {'id': 10,'name': '旺财'});
+  var requestData = {'id': 10,'name': '旺财'};
+  Response response = await dio.post('/test', data: requestData);
   print(response.data.toString());
 }
 

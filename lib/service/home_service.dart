@@ -8,7 +8,11 @@ import '../config/api_service.dart';
    try{
      Response response;
      Dio dio = Dio();
-     dio.options.contentType = ContentType.parse("application/x-www-form-urlencoded");
+     BaseOptions options = BaseOptions();
+     options.connectTimeout = 10 * 1000;
+     options.receiveTimeout = 20 * 1000;
+//     options.contentType = ContentType.parse('application/x-www-form-urlencoded');
+     dio.options = options;
      var requestParameter = {'lon':'115.02932','lat':'35.76189'};
      response = await dio.post(home_service_api['homePageContext'],data: requestParameter);
      if(response.statusCode == 200){

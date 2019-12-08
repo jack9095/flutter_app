@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart'; // 引入 banner 组件
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // 引入屏幕适配组件
 
 // 首页轮播组件
 class SwiperDiy extends StatelessWidget {
@@ -10,8 +11,10 @@ class SwiperDiy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance =  ScreenUtil(width: 750,height: 1334)..init(context);
     return Container(
-      height: 333.0,
+      height: ScreenUtil().setHeight(333),
+      width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemCount: swipeDataList.length,
         itemBuilder: (BuildContext context,int index){

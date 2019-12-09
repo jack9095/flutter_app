@@ -12,6 +12,12 @@ class _CategoryPageState extends State<CategoryPage> {
     final size = MediaQuery.of(context).size;
     final width = size.width; // 屏幕宽度
     final height = size.height; // 屏幕高度
+    //    return SingleChildScrollView(  // 可以防止高度不够提示越界的错误
+//      child: Text(
+//        '分类',
+//        style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold, color: Colors.black),
+//      ),
+//    );
     return Column(
       children: <Widget>[
         Row(

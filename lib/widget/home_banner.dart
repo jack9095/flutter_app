@@ -19,7 +19,7 @@ class SwiperDiy extends StatelessWidget {
         itemCount: swipeDataList.length,
         itemBuilder: (BuildContext context,int index){
           // 这里 return 就是展示在界面上的元素
-          return Image.network("${swipeDataList[index]['image']}",fit: BoxFit.fill,);
+          return Image.network("${swipeDataList[index]['imagePath']}",fit: BoxFit.fill,);
         },
         autoplay: true, // 自动播放
         pagination: SwiperPagination(),  // 指示器

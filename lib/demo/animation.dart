@@ -21,6 +21,8 @@ class _State extends State<AnimationWidget> with TickerProviderStateMixin {
   AnimationController mAnimatedContainer;
   CurvedAnimation curve;
 
+  var isClick = true;
+
   @override
   void initState() {
     super.initState();
@@ -49,7 +51,13 @@ class _State extends State<AnimationWidget> with TickerProviderStateMixin {
         tooltip: "Fade",
         child: Icon(Icons.brush),
         onPressed: () {
-          mAnimatedContainer.forward();
+          if(isClick){
+            isClick = false;
+            mAnimatedContainer.forward(); // 用来开始动画，即从无到有
+          } else {
+            isClick = true;
+            mAnimatedContainer.reverse();  // 用来反向开始动画，即从有到无
+          }
 //          ScaleTransition(scale: animation, child: FlutterLogo(size: 100.0));
         },
       ),

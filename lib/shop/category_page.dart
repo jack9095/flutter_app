@@ -53,9 +53,6 @@ class _CategoryPageState extends State<CategoryPage> {
             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
             color: Color.fromARGB(255, 244, 244, 244),
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-//            child: Container(
-//              color: Colors.blue,
-//            ),
             child: GridView.builder(
               shrinkWrap: true,  // 这个必须得设置， 否则不显示
 //              physics: NeverScrollableScrollPhysics(), // 禁止滑动

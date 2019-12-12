@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import '../config/http_header.dart';
+import '../../config/http_header.dart';
 
 void main(){
   runApp(MaterialApp(

@@ -28,6 +28,9 @@ dependencies:
   flutter_screenutil: ^0.7.0
   flutter_easyrefresh: ^2.0.5
 
+  json_serializable: ^3.2.3
+  build_runner: ^1.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'dart:async';
-import 'dart:io';
 import '../config/api_service.dart';
-import '../api_service_util/Api_service_util.dart';
+import '../util/Api_service_util.dart';
 
 // 获取首页banner数据
 Future getHomeRequestData() async {
   try {
     Response response;
-    response = await ApiUtils.getRequest(HOME_SERVICE_PATH['homePageBanner']);
+    response = await buildDio().get(HOME_SERVICE_PATH['homePageBanner']);
     print('接口数据 = ' + response.data.toString());
     if (response.data['errorCode'] == 0) {
       return response.data;
@@ -16,7 +15,7 @@ Future getHomeRequestData() async {
       throw Exception('请求接口出现异常！');
     }
   } catch (e) {
-    return print('EXCEPTION =====> $e');
+    return print('EXCEPTION ===== 获取首页banner数据 > $e');
   }
 }
 
@@ -29,10 +28,21 @@ Future getHomeCategoryData() async {
       "count": 10,
       "apikey": "0df993c66c0c636e29ecbb5344252a4a"
     };
-    response = await ApiUtils.getRequest(HOME_SERVICE_PATH['homePageCategory'], params:requestData);
-    print('接口数据 = ' + response.data.toString());
+    response = await buildDio().get(HOME_SERVICE_PATH['homePageCategory'], queryParameters:requestData);
+    print('获取首页分类数据接口数据 = ' + response.data.toString());
     return response.data;
   } catch (e) {
-    return print('EXCEPTION =====> $e');
+    return print('EXCEPTION ===== 获取首页分类数据 > $e');
+  }
+}
+
+// 获取首页列表
+Future getHomeList(String page) async{
+  try{
+    Response response = await buildDio().get(HOME_SERVICE_PATH['homeList']+page);
+    print('获取首页列表接口数据 = ' + response.data.toString());
+    return response.data;
+  }catch(e){
+    return print("ERROR 获取首页列表接口数据 ===== > $e");
   }
 }

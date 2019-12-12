@@ -24,6 +24,7 @@ class SwiperDiy extends StatelessWidget {
         autoplay: true, // 自动播放
         pagination: SwiperPagination(),  // 指示器
       ),
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
     );
   }
 }

@@ -75,7 +75,10 @@ class MyApp extends StatelessWidget {
       Container(
         decoration: BoxDecoration(color: Colors.green),
         padding: EdgeInsets.all(10.0),
-        child: Text('我是层叠布局'),
+        child: Expanded(
+          flex: 1,
+            child: Text('我是层叠布局')
+        ),
       ),
       // 定位组件
       Positioned(

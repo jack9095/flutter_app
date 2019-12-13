@@ -5,7 +5,7 @@ import 'dart:convert'; // json 解析
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../adapter/home_adapter.dart';
 import '../bean/home_list_bean.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // 引入屏幕适配组件
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../entity_factory.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
   List<HomeListBean> lists = List();
   HomeListBean mHomeListBean;
   @override
@@ -77,4 +77,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  // 保持页面状态
+  @override
+  bool get wantKeepAlive => true;
 }

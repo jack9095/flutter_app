@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/webview/web_view.dart';
 import 'package:flutter_swiper/flutter_swiper.dart'; // 引入 banner 组件
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // 引入屏幕适配组件
 
@@ -23,8 +24,12 @@ class SwiperDiy extends StatelessWidget {
         },
         autoplay: true, // 自动播放
         pagination: SwiperPagination(),  // 指示器
+        onTap: (index){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => WebViewWidget(url: swipeDataList[index]['url'],title: swipeDataList[index]['title'],)));
+        },
       ),
       margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
     );
   }
+
 }

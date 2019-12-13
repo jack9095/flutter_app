@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toast/toast.dart';
+import '../webview/web_view.dart';
 
 class TopNavigation extends StatelessWidget {
   final List topNavigationLists;
@@ -10,7 +11,8 @@ class TopNavigation extends StatelessWidget {
   Widget _gridViewItemUi(BuildContext context, item) {
     return InkWell(
       onTap: () {
-          Toast.show(item['title'], context);
+//          Toast.show(item['title'], context);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => WebViewWidget(url: item['alt'],title: item['title'],)));
       },
       child: Column(
         children: <Widget>[
@@ -39,8 +41,9 @@ class TopNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(450),
+      height: ScreenUtil().setHeight(300),
       child: GridView.count(
+        physics: const NeverScrollableScrollPhysics(),  // 禁止滑动
         crossAxisCount: 5,
         padding: EdgeInsets.all(3.0),
         children: topNavigationLists.map((item) {

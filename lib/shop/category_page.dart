@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -14,12 +15,16 @@ class _CategoryPageState extends State<CategoryPage> {
     double height = size.height; // 屏幕高度
     double topPadding = MediaQuery.of(context).padding.top;
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
+          color: Colors.amberAccent,
           height: topPadding,
         ),
 //        Divider(height: topPadding,),
-        Row(
+      Container(
+        color: Colors.amberAccent,
+        child:  Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
@@ -46,15 +51,17 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
           ],
         ),
+      ),
 
         Expanded(
+          flex: 10,
           child: Container(
             alignment: Alignment.topLeft,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            color: Color.fromARGB(255, 244, 244, 244),
+            color: Colors.cyan,
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
             child: GridView.builder(
-              shrinkWrap: true,  // 这个必须得设置， 否则不显示
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),  // 这个一定要设置，不然会有各种奇葩问题
+//              shrinkWrap: true,  // 这个必须得设置， 否则不显示
 //              physics: NeverScrollableScrollPhysics(), // 禁止滑动
               itemCount: 12,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -91,6 +98,7 @@ class _CategoryPageState extends State<CategoryPage> {
           ),
         ),
 
+//        SizedBox(height: ScreenUtil().setHeight(10)),
       ],
     );
   }

@@ -11,12 +11,6 @@ class IndexWidget extends StatefulWidget {
 }
 
 class _IndexWidgetState extends State<IndexWidget> {
-  //  final List<BottomNavigationBarItem> BOTTOMTABS = [
-//    BottomNavigationBarItem(
-//      icon: Icon(CupertinoIcons.home),
-//      title: Text('首页'),
-//    ),
-//  ];
 
   int currentIndex = 0;
   var currentWidget;
@@ -33,10 +27,6 @@ class _IndexWidgetState extends State<IndexWidget> {
     final width =size.width;  // 屏幕宽度
     final height =size.height;  // 屏幕高度
     return Scaffold(
-//      appBar: AppBar(
-//        centerTitle: true,
-//        title: Text('电商项目'),
-//      ),
       backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
       // 设置这个组件就会把里面的组件置于最底部
       bottomNavigationBar: BottomNavigationBar(

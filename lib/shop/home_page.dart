@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);  // 保持页面
     ScreenUtil.instance =  ScreenUtil(width: 750,height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(

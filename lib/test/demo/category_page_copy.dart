@@ -63,6 +63,7 @@ class _CategoryPageState extends State<CategoryPage> {
 //              color: Colors.blue,
 //            ),
             child: GridView.builder(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),  // 这个一定要设置，不然会有各种奇葩问题
               shrinkWrap: true,  // 这个必须得设置， 否则不显示
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,

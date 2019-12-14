@@ -4,7 +4,7 @@ import '../../service/home_service.dart';
 import '../../widget/home_banner.dart';
 import '../../widget/home_navigator.dart';
 import 'dart:convert'; // json 解析
-import 'package:flutter_easyrefresh/easy_refresh.dart';
+//import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 class HomePage extends StatefulWidget {
   @override

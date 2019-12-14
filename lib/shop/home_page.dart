@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../service/home_service.dart';
 import 'dart:convert'; // json 解析
-import 'package:flutter_easyrefresh/easy_refresh.dart';
+//import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../adapter/home_adapter.dart';
 import '../bean/home_list_bean.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../entity_factory.dart';
 
 class HomePage extends StatefulWidget {
 

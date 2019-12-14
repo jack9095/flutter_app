@@ -42,7 +42,12 @@ class _IndexWidgetState extends State<IndexWidget> {
           });
         },
       ),
-      body: currentWidget,
+      // TODO 为了页面保持状态 改造一下
+//      body: currentWidget,
+      body: IndexedStack(
+        index: currentIndex,
+        children: PAGE_WIDGET,
+      ),
     );
   }
 }
@@ -66,4 +71,4 @@ const BOTTOMTABS = [
   ),
 ];
 
-final PAGE_WIDGET = [HomePage(), CategoryPage(), CartPage(), MinePage()];
+final List<Widget> PAGE_WIDGET = [HomePage(), CategoryPage(), CartPage(), MinePage()];

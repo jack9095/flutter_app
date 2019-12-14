@@ -3,10 +3,13 @@ class HomeListBean {
   int itemTYpe = 1;
   List<Map> swiper = List();
   List<Map> navigators = List();
+  List<Map> horizontalScrolls = List();
 
   String imageUrl;
   String title;
   String desc;
+  String price;
+  String originalPrice; // 原价
 
 
   String cover;

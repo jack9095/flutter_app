@@ -41,7 +41,7 @@ class TopNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(300),
+      height: ScreenUtil().setHeight(320),
       child: GridView.count(
         physics: const NeverScrollableScrollPhysics(),  // 禁止滑动
         crossAxisCount: 5,

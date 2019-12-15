@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/bean/category_bean.dart';
+import 'package:flutter_app/service/home_service.dart';
 import 'package:flutter_app/widget/category_layout.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_app/widget/category_title_widget.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 // https://www.jianshu.com/p/eb4bf06a06ec  dart语法基础
 class CategoryPage extends StatefulWidget {
@@ -12,93 +14,66 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
-//  List<CategoryBean> lists = List();
-  List<Map> lists = List();
-  Map<String, String> map;
+  List<Subjects> lists = List();
+
+  // 控制器
+  EasyRefreshController _controller;
 
   @override
   void initState() {
     super.initState();
-    map = Map();
-    map['image'] =
-        "https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3463180431,3939423740&fm=26&gp=0.jpg";
-    map['title'] = "风景";
-    map['price'] = "2019-12-15";
-    for (var x = 0; x < 22; x++) {
-      lists.add(map);
-    }
+    _controller = EasyRefreshController();
+    getHomeCategoryData().then((val){
+//      var data = json.decode(val.toString());
+      CategoryBean categoryBean = CategoryBean.fromJson(val);
+      categoryBean.subjects.forEach((bean) => print("标题数据 = "+bean.title));
+      setState(() {
+        lists.addAll(categoryBean.subjects);
+      });
+    });
   }
 
-  _phoneClick() async {
-    String url = 'tel:' + "18869998756";
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'url 不合法';
-    }
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    final width = size.width; // 屏幕宽度
-    double height = size.height; // 屏幕高度
-    double topPadding = MediaQuery.of(context).padding.top;
     return Container(
       color: Colors.black12,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Container(
-            color: Colors.amberAccent,
-            height: topPadding,
-          ),
-//        Divider(height: topPadding,),
-          Container(
-            color: Colors.amberAccent,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.black,
-              ),
-//              onPressed: () => Navigator.pop(context),
-            ),
-                Text(
-                  '分类',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(
-                    Icons.share,
-                    color: Colors.black,
-                  ),
-                  onPressed: _phoneClick,
-                ),
-              ],
-            ),
-          ),
-
+          CategoryTitleWidget(),
           Expanded(
             flex: 1,
-            // 这里加 Container 会变成1列，具体原因还没找到，所以这里就不加了
-//          child: Container(
-//            alignment: Alignment.topLeft,
-//            color: Colors.cyan,
-//            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-            child: SingleChildScrollView(
-              child: CategoryWidget(lists: lists),
+            child: EasyRefresh(
+              controller: _controller,
+              onRefresh: () async {
+                print('refresh');
+                await Future.delayed(Duration(seconds: 2), () {
+                  print('刷新完成');
+                  setState(() {
+//                    _count = 20;
+                  });
+                });
+              },
+              onLoad: () async {
+                print('load');
+                await Future.delayed(Duration(seconds: 2), () {
+                  print('加载完成');
+                  setState(() {
+//                    _count += 1;
+                  });
+                });
+              },
+              child: SingleChildScrollView(
+                child: CategoryWidget(subjects: lists),
+              ),
             ),
-//          ),
           ),
-
-//        SizedBox(height: ScreenUtil().setHeight(10)),
         ],
       ),
     );

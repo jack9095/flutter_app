@@ -54,7 +54,7 @@ class CategoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _wrapList();
+    return _wrapList(context);
   }
 
 }

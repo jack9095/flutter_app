@@ -25,7 +25,7 @@ Future getHomeCategoryData() async {
     Response response;
     var requestData = {
       "start": 25,
-      "count": 10,
+      "count": 20,
       "apikey": "0df993c66c0c636e29ecbb5344252a4a"
     };
     response = await buildDio().get(HOME_SERVICE_PATH['homePageCategory'], queryParameters:requestData);

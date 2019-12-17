@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'shop/index.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 // https://blog.csdn.net/ruoshui_t/article/details/95456751   获取状态栏高度 屏幕宽高
 void main() {
@@ -11,12 +12,9 @@ void main() {
 //    DeviceOrientation.landscapeRight
 //  ]);
 
-
   // 强制竖屏
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown
-  ]);
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(ShopWidget());
 }
 
@@ -24,9 +22,17 @@ class ShopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+//      localizationsDelegates: [
+//        GlobalEasyRefreshLocalizations.delegate,
+//      ],
+//      supportedLocales: [
+////    Locale('en', ''),
+//        Locale('zh', 'CN'),
+//      ],
       title: '电商',
       theme: ThemeData(primaryColor: Colors.lightBlue),
-      debugShowCheckedModeBanner: false, // 去掉右上角的 DEBUG
+      debugShowCheckedModeBanner: false,
+      // 去掉右上角的 DEBUG
       home: IndexWidget(),
     );
   }

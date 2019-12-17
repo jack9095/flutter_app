@@ -69,11 +69,11 @@ class _CategoryPageState extends State<CategoryPage> {
 //                color: Theme.of(context).scaffoldBackgroundColor,
 //              ),
 
-              enableControlFinishRefresh: false,
-              enableControlFinishLoad: true,
-              controller: _controller,
-              header: ClassicalHeader(),
-              footer: ClassicalFooter(),
+//              enableControlFinishRefresh: false,
+//              enableControlFinishLoad: true,
+//              controller: _controller,
+//              header: ClassicalHeader(),
+//              footer: ClassicalFooter(),
 
               onRefresh: () async {
                 // 刷新回调

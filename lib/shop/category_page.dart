@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/bean/category_bean.dart';
 import 'package:flutter_app/service/home_service.dart';
 import 'package:flutter_app/widget/category_layout.dart';
@@ -27,6 +28,9 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   void initState() {
     super.initState();
+    // 强制竖屏
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 //    _controller.callRefresh();
 //    _controller.callLoad();
     getHomeCategoryData().then((val) {

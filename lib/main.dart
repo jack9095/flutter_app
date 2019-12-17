@@ -22,13 +22,6 @@ class ShopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-//      localizationsDelegates: [
-//        GlobalEasyRefreshLocalizations.delegate,
-//      ],
-//      supportedLocales: [
-////    Locale('en', ''),
-//        Locale('zh', 'CN'),
-//      ],
       title: '电商',
       theme: ThemeData(primaryColor: Colors.lightBlue),
       debugShowCheckedModeBanner: false,

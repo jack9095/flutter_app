@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import '../service/home_service.dart';
-import 'dart:convert'; // json 解析
-//import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../adapter/home_adapter.dart';
 import '../bean/home_list_bean.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +18,10 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   @override
   void initState() {
     super.initState();
+    // 强制竖屏
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
     getHomeRequestData().then((val){
       setState(() {
         List<Map> swiper = (val['data'] as List).cast();

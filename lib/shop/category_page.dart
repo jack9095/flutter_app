@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/bean/category_bean.dart';
 import 'package:flutter_app/service/home_service.dart';
-import 'package:flutter_app/widget/category_layout.dart';
-import 'package:flutter_app/widget/category_title_widget.dart';
+import 'package:flutter_app/widget/category/category_layout.dart';
+import 'package:flutter_app/widget/category/category_title_widget.dart';
 import 'package:flutter_easyrefresh/bezier_bounce_footer.dart';
 import 'package:flutter_easyrefresh/bezier_hour_glass_header.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -60,6 +60,7 @@ class _CategoryPageState extends State<CategoryPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           CategoryTitleWidget(),
+          Divider(height: 0.5,color: Color.fromARGB(255, 245, 245, 245),),
           Expanded(
             flex: 1,
             child: EasyRefresh(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:toast/toast.dart';
-import '../webview/web_view.dart';
+import '../../webview/web_view.dart';
 
 class TopNavigation extends StatelessWidget {
   final List topNavigationLists;

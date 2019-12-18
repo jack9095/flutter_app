@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../../service/home_service.dart';
-import '../../widget/home_banner.dart';
-import '../../widget/home_navigator.dart';
+import 'package:flutter_app/widget/home/home_banner.dart';
+import 'package:flutter_app/widget/home/home_navigator.dart';
 import 'dart:convert'; // json 解析
 //import 'package:flutter_easyrefresh/easy_refresh.dart';
 

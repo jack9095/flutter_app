@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/widget/home_view_item.dart';
-import 'package:flutter_app/widget/horizontal_rolling.dart';
-import '../widget/home_banner.dart';
-import '../widget/home_navigator.dart';
+import 'package:flutter_app/widget/home/home_view_item.dart';
+import 'package:flutter_app/widget/home/horizontal_rolling.dart';
+import 'package:flutter_app/widget/home/home_banner.dart';
+import 'package:flutter_app/widget/home/home_navigator.dart';
 import '../bean/home_list_bean.dart';
 
 Widget buildListData(BuildContext context,HomeListBean bean) {

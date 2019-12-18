@@ -17,7 +17,7 @@ class CategoryTitleWidget extends StatelessWidget {
     double topPadding = MediaQuery.of(context).padding.top; // 手机顶部状态栏的高度
     return  Container(
       padding: EdgeInsets.only(top: topPadding),
-      color: Colors.blue,
+      color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

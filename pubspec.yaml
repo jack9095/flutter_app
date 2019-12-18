@@ -57,6 +57,11 @@ flutter:
     - images/scener.jpg
     - images/mine_bg.png
     - images/mine_vip_code.png
+    - images/mine_arrow.png
+    - images/mine_made.png
+    - images/mine_shipped.png
+    - images/mine_received.png
+    - images/mine_good.png
     - assets/pics/bank_zs.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

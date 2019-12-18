@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/bean/ticket_bean.dart';
+import 'package:flutter_app/bean/mine_bean.dart';
 import 'package:flutter_app/widget/mine/mine_user_view.dart';
+import 'package:flutter_app/widget/mine/order_title_widget.dart';
+import 'package:flutter_app/widget/mine/order_widget.dart';
 import 'package:flutter_app/widget/mine/ticket_list_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -52,13 +54,21 @@ class _MinePageState extends State<MinePage> {
                   ),
                   UserWidget(
                       image:
-                      'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1096104534,858966386&fm=26&gp=0.jpg',
+                          'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1096104534,858966386&fm=26&gp=0.jpg',
                       name: '王飞'),
-                  TicketWidget(lists: TicketBean().getData()),
+                  TicketWidget(lists: MineBean().getData()),
                 ],
               ),
 
+              SizedBox(
+                height: 13,
+              ),
+
               // 我的订单
+              OrderTitleWidget(),
+              OrderWidget(
+                lists: MineBean().getOrder(),
+              ),
             ],
           ),
         ),

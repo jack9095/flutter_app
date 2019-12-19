@@ -7,12 +7,6 @@ class OrderWidget extends StatelessWidget {
 
   Widget _orderView(image, title, visible) {
 
-    // 圆形头像
-//    CircleAvatar(
-//      backgroundImage: NetworkImage( 'url'),
-//      radius: 100,
-//    ),
-
     return Container(
       margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
       child: Stack(

@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 
 class OrderTitleWidget extends StatelessWidget {
 
+  final String title;
+  final bool isArrow;
+
+  const OrderTitleWidget({Key key, this.title, this.isArrow}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(4.5, 0, 0, 0),
-      height: 35,
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+      height: 45,
       margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(topLeft:Radius.circular(5.0),topRight: Radius.circular(5.0)),
@@ -22,7 +27,7 @@ class OrderTitleWidget extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(10, 5, 0, 0),
                 child: Text(
-                  '我的订单',
+                  title,
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -30,29 +35,32 @@ class OrderTitleWidget extends StatelessWidget {
                 ),
               ),
 
-              Container(
-                margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      '全部订单',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 153, 153, 153),
-                        fontSize: 14,
+              Offstage(
+                offstage: isArrow,  // true 隐藏 false 显示
+                child: Container(
+                  margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        '全部订单',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 153, 153, 153),
+                          fontSize: 14,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 5,),
-                    Image.asset('images/mine_arrow.png',
-                    height: 15,
-                    width: 18,),
-                  ],
+                      SizedBox(width: 5,),
+                      Image.asset('images/mine_arrow.png',
+                        height: 15,
+                        width: 18,),
+                    ],
+                  ),
                 ),
               ),
 
             ],
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
             color: Colors.black12,
             height: 0.5,
           ),

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app/bean/mine_bean.dart';
+import 'package:flutter_app/widget/mine/activity_order.dart';
 import 'package:flutter_app/widget/mine/mine_user_view.dart';
 import 'package:flutter_app/widget/mine/order_title_widget.dart';
 import 'package:flutter_app/widget/mine/order_widget.dart';
+import 'package:flutter_app/widget/mine/service_widget.dart';
 import 'package:flutter_app/widget/mine/ticket_list_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,7 +36,7 @@ class _MinePageState extends State<MinePage> {
         // 垂直方向滚动
         scrollDirection: Axis.vertical,
         padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-        physics: BouncingScrollPhysics(),
+//        physics: BouncingScrollPhysics(), // 实现ios 底部和顶部回弹效果
 
         child: Container(
           child: Column(
@@ -65,10 +67,26 @@ class _MinePageState extends State<MinePage> {
               ),
 
               // 我的订单
-              OrderTitleWidget(),
+              OrderTitleWidget(title:'我的订单',isArrow: false),
               OrderWidget(
                 lists: MineBean().getOrder(),
               ),
+
+              SizedBox(
+                height: 13,
+              ),
+
+              // 活动订单
+              ActivityOrderWidget(),
+
+              SizedBox(
+                height: 13,
+              ),
+
+              // 我的服务
+              OrderTitleWidget(title: '我的服务',isArrow: true,),
+              ServiceWidget(lists: MineBean().getService(),),
+
             ],
           ),
         ),

@@ -22,6 +22,12 @@ class UserWidget extends StatelessWidget {
     );
   }
 
+  // 圆形头像
+//    CircleAvatar(
+//      backgroundImage: NetworkImage( 'url'),
+//      radius: 100,
+//    ),
+
   @override
   Widget build(BuildContext context) {
     return Container(

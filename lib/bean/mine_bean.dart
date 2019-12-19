@@ -57,4 +57,45 @@ class MineBean {
     lists.add(map);
     return lists;
   }
+
+  List<Map> getService(){
+    lists = List();
+    map = Map();
+
+    map['image'] = "images/mine_made.png";
+    map['title'] = "地址";
+    map['visible'] = false;
+    lists.add(map);
+
+    map = Map();
+    map['image'] = "images/mine_shipped.png";
+    map['title'] = "消息";
+    map['visible'] = true;
+    lists.add(map);
+
+    map = Map();
+    map['image'] = "images/mine_received.png";
+    map['title'] = "客服";
+    map['visible'] = true;
+    lists.add(map);
+
+    map = Map();
+    map['image'] = "images/mine_good.png";
+    map['title'] = "反馈";
+    map['visible'] = true;
+    lists.add(map);
+
+    map = Map();
+    map['image'] = "images/mine_good.png";
+    map['title'] = "FAQ";
+    map['visible'] = true;
+    lists.add(map);
+
+    map = Map();
+    map['image'] = "images/mine_good.png";
+    map['title'] = "更多";
+    map['visible'] = true;
+    lists.add(map);
+    return lists;
+  }
 }

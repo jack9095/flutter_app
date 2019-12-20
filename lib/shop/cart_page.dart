@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/widget/shop_card/card_title_view.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -9,11 +10,10 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        '购物车',
-        style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold, color: Colors.black),
-      ),
+    return Column(
+     children: <Widget>[
+        CardWidget(),
+     ],
     );
   }
 }

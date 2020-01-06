@@ -10,10 +10,13 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-     children: <Widget>[
-        CardWidget(),
-     ],
+    return Scaffold(
+      appBar: AppBar(
+        title: CardWidget(),
+      ),
+      body: Container(
+
+      ),
     );
   }
 }

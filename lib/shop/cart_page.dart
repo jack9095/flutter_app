@@ -16,6 +16,7 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   StreamSubscription _dataChange;
   var datas = CartBean().getData();
+  List<CartBean> lists =  List();
 
   @override
   void initState() {
@@ -36,6 +37,16 @@ class _CartPageState extends State<CartPage> {
               }
             }
 
+            lists.addAll(datas);
+
+            datas.clear();
+            datas.addAll(lists);
+//            CartBean mCartBean = CartBean();
+//            mCartBean.title = "购物车数据1";
+//            mCartBean.content = "这是一个商品";
+//            mCartBean.isChecked = true;
+//            mCartBean.image = 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1719063513,2559625643&fm=26&gp=0.jpg';
+//            datas.add(mCartBean);
           });
           break;
       }

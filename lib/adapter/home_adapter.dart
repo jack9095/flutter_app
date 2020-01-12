@@ -18,7 +18,7 @@ Widget buildListData(BuildContext context,HomeListBean bean) {
       widget = HomeItemView(mHomeListBean: bean);
       break;
     case 4:
-      widget  =  HomeHorizontalWidget(lists: bean.horizontalScrolls); // 水平滚动
+      widget = HomeHorizontalWidget(lists: bean.horizontalScrolls); // 水平滚动
       break;
   }
   return widget;

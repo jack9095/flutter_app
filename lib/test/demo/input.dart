@@ -29,7 +29,7 @@ class _PageWidgetState extends State<PageWidget> {
           children: <Widget>[
             TextField(
               controller: typeController, // 监听文本字段变化
-              autofocus: true,
+              autofocus: true, // 获取焦点
               // 装饰
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.fromLTRB(10, 5, 10, 5),

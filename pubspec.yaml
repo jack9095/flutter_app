@@ -30,7 +30,10 @@ dependencies:
 
   webview_flutter: ^0.3.10
 
+  #  拨打电话、发送邮件
   url_launcher: ^5.4.1
+
+  event_bus: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +65,8 @@ flutter:
     - images/mine_shipped.png
     - images/mine_received.png
     - images/mine_good.png
+    - images/add_card.png
+    - images/reduce_card.png
     - assets/pics/bank_zs.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -38,7 +38,7 @@ class TicketWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 //      alignment: Alignment.topLeft,
-      margin: EdgeInsets.fromLTRB(15, 180, 15, 0),
+      margin: EdgeInsets.fromLTRB(15, ScreenUtil().setHeight(360), 15, 0),
       padding: EdgeInsets.fromLTRB(4.5, 0, 0, 0),
       height: 70,
       decoration: BoxDecoration(

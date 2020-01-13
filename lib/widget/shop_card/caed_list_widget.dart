@@ -73,9 +73,9 @@ class CartListWidget extends StatelessWidget {
                       // 装饰
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(3, 0, 0, 0),
-//                        hintText: '请输入内容',
+                        hintText: mCartBean.number
 //                        labelText: '大家好', // 悬浮提示，可代替hintText
-//                        helperText: '请输入你需要的内容', // 帮助文字
+//                        helperText: mCartBean.number, // 帮助文字
                       ),
                     ),
                   ),

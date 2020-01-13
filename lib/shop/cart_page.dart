@@ -31,22 +31,17 @@ class _CartPageState extends State<CartPage> {
           setState(() {
             int index = event.obj as int;
             for(int i = 0; i < datas.length; i++){
+              var data = datas[i];
               if(i == index){
-                print('改变选中状态');
-                datas[index].isChecked = !datas[index].isChecked;
+                print('选中状态角标 = $index');
+                print('选中状态${data.isChecked}');
+                print('选中标题${data.title}');
               }
             }
 
-            lists.addAll(datas);
-
-            datas.clear();
-            datas.addAll(lists);
-//            CartBean mCartBean = CartBean();
-//            mCartBean.title = "购物车数据1";
-//            mCartBean.content = "这是一个商品";
-//            mCartBean.isChecked = true;
-//            mCartBean.image = 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1719063513,2559625643&fm=26&gp=0.jpg';
-//            datas.add(mCartBean);
+            for(var x in datas){
+              print(x.isChecked);
+            }
           });
           break;
       }

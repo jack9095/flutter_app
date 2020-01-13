@@ -1,6 +1,6 @@
 
 class CartBean {
-    bool isChecked;
+    bool isChecked = false;
     String title;
     String content;
     String image;
